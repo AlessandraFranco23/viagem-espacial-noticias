@@ -15,15 +15,11 @@ export default function LoginScreen({ navigation }) {
 
     try {
       const usuario = await signInWithEmailAndPassword(auth, email, senha);
-      navigation.navigate("");
+      navigation.navigate('App', { screen: 'Home' });
     } catch (error) {
       console.log(error);
     }
   };
-
-  useEffect(()=>{navigation.navigate('App', { screen: 'Home' });
-
-},[])
   
   return (
     <View style={styles.container}>
